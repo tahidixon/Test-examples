@@ -1,0 +1,42 @@
+<!-- Code modified from https://www.sitepoint.com/unit-test-javascript-mocha-chai/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 7 Tests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.0.1/mocha.min.css">
+    <style>
+        #canvasContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="mocha"></div>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.0.1/mocha.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/5.0.0/sinon.min.js"></script>
+
+<!-- Mock the Phaser library so we can test Player -->
+<script defer src="scripts/libs/mock_phaser.js"></script>
+<script type="module">
+    mocha.setup('bdd')
+</script>
+
+<!-- Code to test is imported by the test scripts -->
+
+<!-- load your test files here -->
+<script type="module" src="test/test_Player.js"></script>
+<script type="module" src="test/test_PlayerModel.js"></script>
+<script type="module" src="test/test_GunModel.js"></script>
+<script type="module" src="test/test_Enemy.js"></script>
+<script type="module" src="test/test_PowerupModel.js"></script>
+
+<script type="module">
+    mocha.run();
+</script>
+
+<div id="canvasContainer"></div>
+</body>
+</html>
